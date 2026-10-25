@@ -284,6 +284,21 @@ public class SinglyLinkedList{
             }
         }
     }
-    
+//19. Remove Duplicate
+    public void removeDuplicates(){
+        java.util.HashSet<Integer> seen = new java.util.HashSet<>();
+        Node current = head;
+        Node prev = null;
+        while(current != null){
+            if(seen.contains(current.data)){
+                prev.next = current.next;
+            } else {
+                seen.add(current.data);
+                prev = current;
+            }
+            current = current.next;
+        }
+        
+    }
 
 }
