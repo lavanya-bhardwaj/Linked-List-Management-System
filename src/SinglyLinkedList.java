@@ -56,6 +56,42 @@ public class SinglyLinkedList{
         newNode.next = current.next;
         current.next = newNode;
     }
-    
+//4. Inserting After a Specific Node
+    public void insertAfterNode(int data, int targetData) {
+        Node current = head;
+        while (current != null && current.data != targetData) {
+            current = current.next;
+        }
+        if (current == null) {
+            System.out.println("Target node not found.");
+            return;
+        }
+        Node newNode = new Node(data);
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+//5. Inserting Before a Specific Node
+    public void insertBeforeNode(int data, int targetData) {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        if (head.data == targetData) {
+            insertAtBeginning(data);
+            return;
+        }
+        Node current = head;
+        while (current.next != null && current.next.data != targetData) {
+            current = current.next;
+        }
+        if (current.next == null) {
+            System.out.println("Target node not found.");
+            return;
+        }
+        Node newNode = new Node(data);
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+
 
 }
