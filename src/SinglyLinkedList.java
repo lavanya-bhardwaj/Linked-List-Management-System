@@ -204,8 +204,48 @@ public class SinglyLinkedList{
         }
         System.out.println("null");
     }
+//13. Count Nodes
+    public int countNodes() {
+        int count = 0;
+        Node current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
+//14. Find Maximum
+    public Integer findMaximum() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return null;
+        }
+        int max = head.data;
+        Node current = head.next;
+        while (current != null) {
+            if (current.data > max) {
+                max = current.data;
+            }
+            current = current.next;
+        }
+        return max;
+    }
+//15. Find Minimum
+    public Integer findMinimum() {
+        if (head == null) {
+            return null;
+        }
 
-
-
+        int min = head.data;
+        Node current = head.next;
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+        return min;
+    }
+    
 
 }
