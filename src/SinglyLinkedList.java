@@ -71,27 +71,43 @@ public class SinglyLinkedList{
         current.next = newNode;
     }
 //5. Inserting Before a Specific Node
-    public void insertBeforeNode(int data, int targetData) {
+    
+    public void insertBefore(int target, int data) {
         if (head == null) {
             System.out.println("List is empty.");
             return;
         }
-        if (head.data == targetData) {
+
+        if (head.data == target) {
             insertAtBeginning(data);
             return;
         }
+
         Node current = head;
-        while (current.next != null && current.next.data != targetData) {
+
+        while (current.next != null && current.next.data != target) {
             current = current.next;
         }
+
         if (current.next == null) {
-            System.out.println("Target node not found.");
+            System.out.println("Value not found.");
             return;
         }
+
         Node newNode = new Node(data);
         newNode.next = current.next;
         current.next = newNode;
+
+        }
+//6. Delete From Beginning
+    public void deleteFromBeginning() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        head = head.next;
     }
+
 
 
 }
