@@ -166,6 +166,32 @@ public class SinglyLinkedList{
         }
         current.next = current.next.next;
     }
+//10. Search
+    public int search(int value){
+        Node current = head;
+        int position = 1;
+        while(current != null){
+            if(current.data == value){
+                return position;
+            }
+            current = current.next;
+            position++;
+        }
+        return -1; // Value not found
+    }
+//11. Update a Node's Value
+    public void updateNodeValue(int oldValue, int newValue) {
+        Node current = head;
+        while (current != null) {
+            if (current.data == oldValue) {
+                current.data = newValue;
+                return;
+            }
+            current = current.next;
+        }
+        System.out.println("Value not found.");
+    }
+
 
 
 }
