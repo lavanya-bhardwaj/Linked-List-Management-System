@@ -191,6 +191,20 @@ public class SinglyLinkedList{
         }
         System.out.println("Value not found.");
     }
+//12. Display the Linked List
+    public void display() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
 
 
 
