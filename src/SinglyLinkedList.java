@@ -146,5 +146,26 @@ public class SinglyLinkedList{
         current.next = current.next.next;
 
     }
+//9. Delete by Value
+    public void deleteByValue(int value) {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        if (head.data == value) {
+            head = head.next;
+            return;
+        }
+        Node current = head;
+        while (current.next != null && current.next.data != value) {
+            current = current.next;
+        }
+        if (current.next == null) {
+            System.out.println("Value not found.");
+            return;
+        }
+        current.next = current.next.next;
+    }
+
 
 }
