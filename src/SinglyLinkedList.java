@@ -272,6 +272,18 @@ public class SinglyLinkedList{
         }
         head = prev;
     }
-
+//18. Sort in Ascending Order
+    public void sort(){
+        for(Node i = head; i != null; i = i.next){
+            for(Node j = i.next; j != null; j = j.next){
+                if(i.data > j.data){
+                    int temp = i.data;
+                    i.data = j.data;
+                    j.data = temp;
+                }
+            }
+        }
+    }
+    
 
 }
