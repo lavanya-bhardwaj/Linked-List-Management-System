@@ -31,4 +31,31 @@ public class SinglyLinkedList{
         }
         current.next = newNode;
     }
+//3. Inserting at a Specific Position
+    public void insertAtPosition(int data, int position) {
+        if (position < 1) {
+            System.out.println("Invalid position.");
+            return;
+        }
+        if (position == 1) {
+            insertAtBeginning(data);
+            return;
+        }
+        Node current = head;
+
+        for (int i = 1; current != null && i < position - 1; i++) {
+            current = current.next;
+        }
+
+        if (current == null) {
+            System.out.println("Invalid position.");
+            return;
+        }
+
+        Node newNode = new Node(data);
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+    
+
 }
