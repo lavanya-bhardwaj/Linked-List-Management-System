@@ -108,6 +108,43 @@ public class SinglyLinkedList{
         head = head.next;
     }
 
+//7. Delete From End
+    public void deleteFromEnd() {
+        if (head == null) {
+            System.out.println("List is empty.");
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next = null;
 
+    }
+//8. Delete from Position
+    public void deleteFromPosition(int position){
+        if(head == null || position < 1){
+            System.out.println("Invalid position or list is empty.");
+            return;
+        }
+        if(position == 1){
+            deleteFromBeginning();
+            return;
+        }
+        Node current = head;
+        for(int i = 1; current != null && i < position - 1; i++){
+            current = current.next;
+        }
+        if(current.next == null){
+            System.out.println("Invalid position.");
+            return;
+        }
+        current.next = current.next.next;
+
+    }
 
 }
